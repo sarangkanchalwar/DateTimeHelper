@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SarangKanchalwar.Helpers.DateTimeHelper</id>
+    <version>1.0.0.0</version>
+    <title>DateTimeHelper</title>
+    <authors>Sarang Kanchalwar</authors>
+    <owners>Sarang Kanchalwar</owners>
+    <licenseUrl>https://github.com/sarangkanchalwar/DateTimeHelper/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/sarangkanchalwar/DateTimeHelper</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>DateTimeHelper package provides various DateTime class related methods and conversions.</description>
+    <releaseNotes>First release of the package.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+	<language>en-US</language>
+    <tags>DateTime TimeStamp UnixTimeStamp TimeZone TimeZoneInfo</tags>
+  </metadata>
+</package>
