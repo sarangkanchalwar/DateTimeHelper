@@ -67,5 +67,117 @@ namespace DateTimeHelper
             for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))
                 yield return day;
         }
+
+        /// <summary>
+        /// Gets the formated date time string.
+        /// </summary>
+        /// <param name="dateTime">The DateTime object.</param>
+        /// <returns></returns>
+        public static string GetFormatedDateTimeString(DateTime dateTime)
+        {
+            try
+            {
+                DateTime dt1 = DateTime.UtcNow;
+                TimeSpan ts;
+                try
+                {
+                    ts = dt1 - dateTime;
+                }
+                catch (Exception)
+                {
+                    ts = dateTime - dt1;
+                }
+                string days = "";
+                string hour = "";
+                if (ts.TotalDays <= 1)
+                {
+                    if (ts.TotalHours > 1 && ts.TotalHours < 2)
+                    {
+                        days = Convert.ToInt32(ts.Hours) + " hr ";
+                    }
+                    else if (ts.TotalHours > 1)
+                    {
+                        days = Convert.ToInt32(ts.Hours) + " hrs ";
+                    }
+                    if (ts.Minutes <= 1)
+                    {
+                        hour = Convert.ToInt32(ts.Minutes) + " min ";
+                    }
+                    else if (ts.TotalMinutes > 1 && ts.TotalMinutes < 2)
+                    {
+                        hour = Convert.ToInt32(ts.Minutes) + " min ";
+                    }
+                    else
+                    {
+                        hour = Convert.ToInt32(ts.Minutes) + " mins ";
+                    }
+                }
+                if (ts.TotalDays > 1)
+                {
+                    if (ts.TotalDays > 7)
+                    {
+                        int value = (dt1.Year - dateTime.Year) * 12 + dt1.Month - dateTime.Month;
+                        if (value < 12)
+                        {
+                            days = dateTime.ToString("MMMM dd") + " ";
+                        }
+                        else
+                        {
+                            days = dateTime.ToString("MMMM dd yyyy") + "";
+                        }
+                    }
+                    else
+                    {
+                        if (ts.Days > 1)
+                        {
+                            days = Convert.ToInt32(ts.Days) + " Days ";
+                        }
+                        else if (ts.Days <= 1)
+                        {
+                            days = Convert.ToInt32(ts.Days) + " Day ";
+                        }
+                        if (ts.Hours > 1)
+                        {
+                            hour = Convert.ToInt32(ts.Hours) + " hrs ";
+                        }
+                        else if (ts.TotalMinutes <= 1)
+                        {
+                            hour = Convert.ToInt32(ts.Minutes) + " min ";
+                        }
+                        else
+                        {
+                            hour = Convert.ToInt32(ts.Minutes) + " mins ";
+                        }
+                    }
+                }
+                string response;
+                if (days.Contains("Day") || days.Contains("hr") || hour.Contains("Day") || hour.Contains("hr"))
+                    response = days + hour + "ago";
+                else if (!string.IsNullOrEmpty(days))
+                    response = days;
+                else
+                    response = hour + "ago";
+                return response;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        /// <summary>
+        /// Gets the formated date time string.
+        /// </summary>
+        /// <param name="unixTimestamp">The Unix time stamp.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">Null or empty string not allowed for time stamp.</exception>
+        public static string GetFormatedDateTimeString(string unixTimestamp)
+        {
+            if(string.IsNullOrEmpty(unixTimestamp))
+                throw new ArgumentException("Null or empty string not allowed for time stamp.");
+            double timeStampInDouble = double.Parse(unixTimestamp);
+            DateTime dateTime = UnixTimeStampToDateTime(timeStampInDouble);
+            return GetFormatedDateTimeString(dateTime);
+        }
     }
 }
