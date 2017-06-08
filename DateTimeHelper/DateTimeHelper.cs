@@ -179,5 +179,29 @@ namespace DateTimeHelper
             DateTime dateTime = UnixTimeStampToDateTime(timeStampInDouble);
             return GetFormatedDateTimeString(dateTime);
         }
+
+        /// <summary>
+        /// Converts the UTC date time in time zone date time.
+        /// </summary>
+        /// <param name="utcDateTime">The UTC date time.</param>
+        /// <param name="timeZoneInfo">The time zone information.</param>
+        /// <returns></returns>
+        public static DateTime ConvertDateTimeInTimeZone(DateTime utcDateTime, TimeZoneInfo timeZoneInfo)
+        {
+            return TimeZoneInfo.ConvertTimeFromUtc(utcDateTime, timeZoneInfo);
+        }
+
+        /// <summary>
+        /// Converts the UTC date time in time zone date time.
+        /// TimeZoneId can be get from ReadOnlyCollection - TimeZoneInfo.GetSystemTimeZones()
+        /// </summary>
+        /// <param name="utcDateTime">The UTC date time.</param>
+        /// <param name="timeZoneId">The time zone identifier string.</param>
+        /// <returns></returns>
+        public static DateTime ConvertDateTimeInTimeZone(DateTime utcDateTime, string timeZoneId)
+        {
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+            return ConvertDateTimeInTimeZone(utcDateTime, timeZoneInfo);
+        }
     }
 }
