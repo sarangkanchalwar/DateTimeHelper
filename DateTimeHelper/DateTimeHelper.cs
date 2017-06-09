@@ -7,9 +7,9 @@ namespace DateTimeHelper
     public static class DateTimeHelper
     {
         /// <summary>
-        /// Converts the Unix time stamp value to C# DateTime object.
+        /// Converts the UNIX time stamp value to C# DateTime object.
         /// </summary>
-        /// <param name="unixTimeStamp">The Unix time stamp.</param>
+        /// <param name="unixTimeStamp">The UNIX time stamp.</param>
         /// <returns></returns>
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
@@ -19,7 +19,21 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Converts the C# DateTime object to Unix time stamp.
+        /// Converts the UNIX time stamp value to C# DateTime object.
+        /// </summary>
+        /// <param name="unixTimeStamp">The UNIX time stamp.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">Invalid UNIX time step.</exception>
+        public static DateTime UnixTimeStampToDateTime(string unixTimeStamp)
+        {
+            if(string.IsNullOrEmpty(unixTimeStamp))
+                throw new ArgumentException("Invalid UNIX time stamp.");
+            var timeStampinDouble = double.Parse(unixTimeStamp);
+            return UnixTimeStampToDateTime(timeStampinDouble);
+        }
+
+        /// <summary>
+        /// Converts the C# DateTime object to UNIX time stamp.
         /// </summary>
         /// <param name="dateTime">The DateTime object.</param>
         /// <returns></returns>
