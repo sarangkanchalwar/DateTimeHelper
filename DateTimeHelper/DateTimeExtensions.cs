@@ -21,21 +21,6 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Parses the specified UNIX time stamp.
-        /// </summary>
-        /// <param name="dt">The date time.</param>
-        /// <param name="unixTimeStamp">The UNIX time stamp.</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException">Invalid UNIX time stamp.</exception>
-        public static DateTime Parse(this DateTime dt, string unixTimeStamp)
-        {
-            if (string.IsNullOrEmpty(unixTimeStamp))
-                throw new ArgumentException("Invalid UNIX time stamp.");
-            var timeStampinDouble = double.Parse(unixTimeStamp);
-            return dt.Parse(timeStampinDouble);
-        }
-
-        /// <summary>
         /// Converts to the UNIX time stamp.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
