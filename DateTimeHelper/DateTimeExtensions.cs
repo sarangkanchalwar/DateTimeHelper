@@ -8,19 +8,6 @@ namespace DateTimeHelper
     public static class DateTimeExtensions
     {
         /// <summary>
-        /// Parses the specified UNIX time stamp.
-        /// </summary>
-        /// <param name="dt">The date time.</param>
-        /// <param name="unixTimeStamp">The UNIX time stamp.</param>
-        /// <returns></returns>
-        public static DateTime Parse(this DateTime dt, double unixTimeStamp)
-        {
-            var unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            var unixTimeStampInTicks = (long)(unixTimeStamp * TimeSpan.TicksPerSecond);
-            return new DateTime(unixStart.Ticks + unixTimeStampInTicks);
-        }
-
-        /// <summary>
         /// Converts to the UNIX time stamp.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
@@ -34,7 +21,54 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Converts to the formated date time string.
+        /// Get first the day of the month.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns></returns>
+        public static DateTime GetFirstDayOfTheMonth(this DateTime date)
+        {
+            return new DateTime(date.Year, date.Month, 1);
+        }
+
+        /// <summary>
+        /// Get Last the day of the month.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns></returns>
+        public static DateTime GetLastDayOfTheMonth(this DateTime date)
+        {
+            return new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
+        }
+
+        /// <summary>
+        /// Gets the date of start day of week.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <param name="startOfWeek">The start of week.</param>
+        /// <returns></returns>
+        public static DateTime GetStartDayOfWeek(this DateTime date, DayOfWeek startOfWeek)
+        {
+            int diff = date.DayOfWeek - startOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            return date.AddDays(-1 * diff).Date;
+        }
+
+        /// <summary>
+        /// Gets the date of last day of week.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <param name="dayOfWeek">The day of week.</param>
+        /// <returns></returns>
+        public static DateTime GetLastDayOfWeek(this DateTime date, DayOfWeek startOfWeek)
+        {
+            return date.GetStartDayOfWeek(startOfWeek).AddDays(6).Date;
+        }
+
+        /// <summary>
+        /// Converts to the formated date time string e.g. 21 hours 2 miuntes ago | 3 months ago.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
         /// <returns></returns>
