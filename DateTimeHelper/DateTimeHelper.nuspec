@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SarangKanchalwar.Helpers.DateTimeHelper</id>
-    <version>1.1.0.0</version>
+    <version>1.1.01-alpha</version>
     <title>DateTimeHelper</title>
     <authors>Sarang Kanchalwar</authors>
     <owners>Sarang Kanchalwar</owners>
