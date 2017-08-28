@@ -4,8 +4,7 @@ using System.Globalization;
 
 namespace DateTimeHelper
 {
-    [Obsolete("Deprecated from 1.2 version, instead use DTHelper class.")]
-    public static class DateTimeHelper
+    public static class DTHelper
     {
         /// <summary>
         /// Converts the UNIX time stamp value to C# DateTime object.

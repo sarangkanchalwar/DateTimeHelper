@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SarangKanchalwar.Helpers.DateTimeHelper</id>
-    <version>1.1.01-alpha</version>
+    <version>1.2</version>
     <title>DateTimeHelper</title>
     <authors>Sarang Kanchalwar</authors>
     <owners>Sarang Kanchalwar</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/sarangkanchalwar/DateTimeHelper</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DateTimeHelper package provides various DateTime class extensions and other utility methods.</description>
-    <releaseNotes>Added DateTime extensions in this release of the package.</releaseNotes>
+    <releaseNotes>Added DTHelper to fix calling without namespace prefix issue. Deprecatd DateTimeHelper class.</releaseNotes>
     <copyright>Copyright 2017</copyright>
 	<language>en-US</language>
     <tags>DateTime TimeStamp UnixTimeStamp TimeZone TimeZoneInfo</tags>
