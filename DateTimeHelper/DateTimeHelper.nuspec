@@ -8,6 +8,7 @@
     <owners>Sarang Kanchalwar</owners>
     <licenseUrl>https://github.com/sarangkanchalwar/DateTimeHelper/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/sarangkanchalwar/DateTimeHelper</projectUrl>
+	<iconUrl>http://cdn.onlinewebfonts.com/svg/img_407529.svg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DateTimeHelper package provides various DateTime class extensions and other utility methods.</description>
     <releaseNotes>Added DTHelper to fix calling without namespace prefix issue. Deprecatd DateTimeHelper class.</releaseNotes>
