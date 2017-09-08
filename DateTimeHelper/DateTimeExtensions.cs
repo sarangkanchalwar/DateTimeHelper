@@ -21,6 +21,16 @@ namespace DateTimeHelper
         }
 
         /// <summary>
+        /// Converts the DateTime into string in ISO format.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns></returns>
+        public static string ToStringIso(this DateTime date)
+        {            
+             return date.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        /// <summary>
         /// Get first the day of the month.
         /// </summary>
         /// <param name="date">The date.</param>
