@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DateTimeHelper.Portable</id>
-    <version>1.0.4</version>
+    <version>1.0.5-beta</version>
     <title>DateTime Helper Portable</title>
     <authors>Sarang Kanchalwar</authors>
     <owners>Sarang Kanchalwar</owners>
@@ -21,7 +21,7 @@
 	</frameworkAssemblies-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DateTimeHelper package provides various DateTime class extensions and other utility methods.</description>
-    <releaseNotes>Portble dependency fix.</releaseNotes>
+    <releaseNotes>Added DateTime extension methods.</releaseNotes>
     <copyright>Copyright 2017</copyright>
 	<language>en-US</language>
     <tags>DateTime TimeStamp UnixTimeStamp TimeZone TimeZoneInfo Xamarin</tags>
