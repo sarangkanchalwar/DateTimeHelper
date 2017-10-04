@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeHelper.Portable", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeHelper.Tests", "..\DateTimeHelper.Tests\DateTimeHelper.Tests.csproj", "{D60A5B0B-146F-40A8-8418-B1986BDEC8DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeHelper.Portable.Tests", "DateTimeHelper.Portable.Tests\DateTimeHelper.Portable.Tests.csproj", "{63DF1F41-7F7F-41B0-A61C-A796B338AB65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D60A5B0B-146F-40A8-8418-B1986BDEC8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60A5B0B-146F-40A8-8418-B1986BDEC8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60A5B0B-146F-40A8-8418-B1986BDEC8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DF1F41-7F7F-41B0-A61C-A796B338AB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DF1F41-7F7F-41B0-A61C-A796B338AB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DF1F41-7F7F-41B0-A61C-A796B338AB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DF1F41-7F7F-41B0-A61C-A796B338AB65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
